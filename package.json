@@ -1,0 +1,23 @@
+{
+  "name": "nutritional-data-analysis",
+  "version": "1.0.0",
+  "description": "Análise de dados nutricionais usando Supabase e JavaScript.",
+  "main": "connect.js",
+  "type": "module",
+  "scripts": {
+    "start": "node connect.js"
+  },
+  "keywords": [
+    "nutrição",
+    "supabase",
+    "sql",
+    "javascript",
+    "análise-de-dados"
+  ],
+  "author": "Dayana de Paula",
+  "license": "MIT",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.0.0",
+    "dotenv": "^16.4.7"
+  }
+}

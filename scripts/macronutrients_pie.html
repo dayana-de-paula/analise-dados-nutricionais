@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distribuição de Macronutrientes por Dia</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            margin: 0;
+            background-color: #f9f9f9;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            height: 100vh;
+            overflow-y: auto;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            margin-left: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo {
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+            display: block;
+            margin: 0 auto 20px;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            color: #333;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .chart-container {
+            width: 100%;
+            max-width: 400px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .date-item {
+            cursor: pointer;
+            padding: 12px 15px;
+            margin: 8px 0;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .date-item:hover {
+            background-color: #e0e0e0;
+            transform: translateX(5px);
+        }
+
+        .date-item.active {
+            background-color: #00cec3;
+            color: white;
+            border-color: #00b3a9;
+        }
+
+        canvas {
+            width: 100% !important;
+            height: 400px !important;
+        }
+
+        .sidebar-title {
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 20px;
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #00cec3;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2 class="sidebar-title">Selecione uma Data</h2>
+        <div id="dateList"></div>
+    </div>
+    <div class="main-content">
+        <img src="../assets/logo.jpeg" alt="" class="logo">
+        <h1>Distribuição de Macronutrientes por Dia</h1>
+        <div class="chart-container">
+            <canvas id="macronutrientsChart"></canvas>
+        </div>
+    </div>
+    <script type="module" src="./macronutrients_pie.js"></script>
+</body>
+</html>
